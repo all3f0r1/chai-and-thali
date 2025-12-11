@@ -13,113 +13,108 @@ export default function Menu() {
       id: "street_adventure",
       title: t('menu.street_adventure'),
       items: [
-        { name: "Chai and Samosa", price: "3.50€", desc: "Thé au lait accompagné d'un triangle croustillant composé de légumes (pomme de terre, petits pois...)" },
-        { name: "Chole Bhature", price: "6.99€", desc: "Un plat traditionnel du Punjab composé de pois chiches épicés cuits dans une sauce savoureuse, accompagnés de bhature, de grandes galettes de pain frits et moelleux." },
-        { name: "Vada Pav", price: "4.99€", desc: "Il se compose d'une galette de pommes de terre épicée (vada), placée entre deux moitiés d'un petit pain moelleux (pav). Le tout est accompagné de chutneys." },
-        { name: "Pav Bhaji", price: "4.99€", desc: "Un plat populaire de la street food de Mumbai composé de pains beurrés et légèrement grillés." },
-        { name: "Onion Bhaji", price: "4.50€", desc: "Des rondelles d'oignons finement hachées, mélangées à une pâte épicée, puis frites jusqu'à obtenir une texture croustillante" },
-        { name: "Momos", price: "4.99€", desc: "De délicieuses bouchées vapeur d'origine himalayenne, farcies de légumes épicés, servies avec une sauce piquante." },
-        { name: "Idli & Sambar", price: "4.99€", desc: "Riz parfumé cuit avec du paneer (fromage indien) de petits gâteaux de riz vapeur, légers et moelleux, servis avec un curry épicé de lentilles (sambar)" },
-        { name: "Dosa Plain", price: "4.99€", desc: "Une crêpe salé dosa garnie de pommes de terre épicées enroulée et servie avec des chutneys et du sambar." },
-        { name: "Dosa Masala", price: "4.99€", desc: "Une crêpe fine et croustillante, faite de pâte de riz et de lentilles fermentées, servie avec des chutneys et du sambar pour un goût authentique du sud de l'Inde" },
-        { name: "Khaman Dokhla", price: "3.50€", desc: "Un gâteau salé léger et moelleux à base de farine de pois chiches, cuit à la vapeur et assaisonné de coriandre." },
-        { name: "Cheese Paav Bhaji", price: "5.99€", desc: "Mélange de légumes mijotés dans une sauce riche et épicée, garni d'une généreuse couche de fromage fondant, et du pain moelleux grillés au beurre." },
-        { name: "Mumbai Sandwich", price: "4.99€", desc: "Ce sandwich généreusement garni comprend des couches de légumes croquants, des pommes de, terre épicées chutneys ,... le tout grillé avec du beurre" },
-        { name: "Borivali ki Dabeli", price: "4.99€", desc: "Cette Dabeli de Borivali est un pain farci d'un mélange sucré-salé de pommes de terre épicées, chutney,..." },
-        { name: "Mix Pakoda", price: "4.5€", desc: "Assortiment croustillant de beignets de légumes savamment épicés, frits, idéal avec un bon Chai." },
-        { name: "Cheese Vada Pav", price: "5.50€", desc: "Vada Pav avec fromage." },
-        { name: "Extra Pav", price: "1.55€", desc: "Pav supplémentaire" }
+        { key: "chai_samosa", price: "3.50€" },
+        { key: "chole_bhature", price: "6.99€" },
+        { key: "vada_pav", price: "4.99€" },
+        { key: "pav_bhaji", price: "4.99€" },
+        { key: "onion_bhaji", price: "4.50€" },
+        { key: "momos", price: "4.99€" },
+        { key: "idli_sambar", price: "4.99€" },
+        { key: "dosa_plain", price: "4.99€" },
+        { key: "dosa_masala", price: "4.99€" },
+        { key: "khaman_dokhla", price: "3.50€" },
+        { key: "cheese_paav_bhaji", price: "5.99€" },
+        { key: "mumbai_sandwich", price: "4.99€" },
+        { key: "borivali_dabeli", price: "4.99€" },
+        { key: "mix_pakoda", price: "4.5€" },
+        { key: "cheese_vada_pav", price: "5.50€" },
+        { key: "extra_pav", price: "1.55€" }
       ]
     },
     {
       id: "chaat",
       title: t('menu.chaat'),
       items: [
-        { name: "Pani Puri", price: "3.99€", desc: "Des petites boules croustillantes servies avec et l'eau aromatisée et piquante." },
-        { name: "Pani Puri Chaat", price: "4.99€", desc: "Une version revisitée du classique pani puri, garni de pommes de terre, pois chiches, épices et chutneys sucrés et épicés." },
-        { name: "Aloo Tikki Chaat", price: "4.99€", desc: "Des galettes de pommes de terre croustillantes servies avec du yaourt, des chutneys sucrés et épicés, garnies de coriandre" },
-        { name: "Chole Samosa", price: "4.99€", desc: "Un samosa croustillant brisé et recouvert de de curry de pois chiches, yaourt et chutneys. Des saveurs épicées, sucrées et acidulées." },
-        { name: "Chaat", price: "4.99€", desc: "Des galettes de farine croustillantes garnies de pommes de terre, yaourt, chutneys et épices. Une explosion de saveurs sucrées, épicées." },
-        { name: "Samosa Chaat", price: "4.99€", desc: "Un samosa garni de chutneys, yaourt et d'épices. Une combinaison de croquant et de crémeux." },
-        { name: "Papedi Chaat", price: "4.99€", desc: "Un mélange croustillant de riz soufflé, légumes frais, chutneys épicés et sucré, garni de coriandre. Un encas populaire et léger." },
-        { name: "Bhel Puri", price: "3.99€", desc: "Une salade croustillante et légère, préparée avec du riz soufflé (murmura), des morceaux de puri (galettes fines croustillantes), des légumes frais et chutney." }
+        { key: "pani_puri", price: "3.99€" },
+        { key: "pani_puri_chaat", price: "4.99€" },
+        { key: "aloo_tikki_chaat", price: "4.99€" },
+        { key: "chole_samosa", price: "4.99€" },
+        { key: "chaat_item", price: "4.99€" },
+        { key: "samosa_chaat", price: "4.99€" },
+        { key: "papedi_chaat", price: "4.99€" },
+        { key: "bhel_puri", price: "3.99€" }
       ]
     },
     {
       id: "thali",
       title: t('menu.thali'),
       items: [
-        { 
-          name: "THALI COMPLET", 
-          price: "8.99€", 
-          desc: "RIZ, NAAN, 3 PLATS AU CHOIX, RAITA, SALADES ET 1 DESSERT",
-          highlight: true
-        },
-        { name: "Choley", price: "", desc: "Un curry de pois chiches, mijoté dans une sauce riche et parfumée aux épices." },
-        { name: "Dal Makani", price: "", desc: "Un curry crémeux de lentilles noires et de haricots rouges mijotés lentement avec des épices et du beurre." },
-        { name: "Rajma", price: "", desc: "Des haricots rouges mijotés dans une sauce épicée et crémeuse." },
-        { name: "Aloo gobhi", price: "", desc: "Un mélange de pommes de terre et de chou-fleur épicé, sauté avec du gingembre et de l'ail." },
-        { name: "Dal Tadka", price: "", desc: "Des lentilles jaunes cuites avec des épices et agrémentées d'un tadka (assaisonnement), de cumin et de l'ail." },
-        { name: "Palak Paneer", price: "", desc: "Un curry d'épinards onctueux avec des cubes de paneer (fromage indien)." },
-        { name: "Paneer Makani", price: "", desc: "Des cubes de paneer dans une sauce riche et crémeuse à base de tomates, beurre et épices." },
-        { name: "Mix Vegetables", price: "", desc: "Un mélange coloré de légumes sautés et mijotés avec des épices indiennes." }
+        { key: "thali_complet", price: "8.99€", highlight: true },
+        { key: "choley", price: "" },
+        { key: "dal_makani", price: "" },
+        { key: "rajma", price: "" },
+        { key: "aloo_gobhi", price: "" },
+        { key: "dal_tadka", price: "" },
+        { key: "palak_paneer", price: "" },
+        { key: "paneer_makani", price: "" },
+        { key: "mix_vegetables", price: "" }
       ]
     },
     {
       id: "simple_dishes",
       title: t('menu.simple_dishes'),
       items: [
-        { name: "Choley/Riz ou naan", price: "6.50€", desc: "Un curry de pois chiches épicé, mijoté dans une sauce riche et parfumée aux épices." },
-        { name: "Dal Makani/Riz ou naan", price: "6.50€", desc: "Un curry crémeux de lentilles noires et de haricots rouges, cuit lentement avec des épices, du beurre et de la crème." },
-        { name: "Rajma/Riz ou naan", price: "6.50€", desc: "Des haricots rouges mijotés dans une sauce épicée et crémeuse." },
-        { name: "Aloo gobhi/Riz ou naan", price: "6.50€", desc: "Un mélange de pommes de terre et de chou-fleur épicé, sauté avec du gingembre, de l'ail et des épices." },
-        { name: "Dal Tadka/Riz ou naan", price: "6.50€", desc: "Des lentilles jaunes cuites avec des épices et agrémentées d'un tadka de cumin, ail et piment." },
-        { name: "Palak Paneer/Riz ou naan", price: "6.50€", desc: "Un curry d'épinards onctueux avec des cubes de paneer (fromage indien), assaisonné d'épices." },
-        { name: "Paneer Makani/Riz ou naan", price: "6.50€", desc: "Des cubes de paneer dans une sauce riche et crémeuse à base de tomates, beurre et épices. Un plat doux et idéal avec un naan." },
-        { name: "Mix Vegetables/ naan", price: "6.50€", desc: "Un mélange coloré de légumes sautés et mijotés avec des épices indiennes." },
-        { name: "Paneer Biryani", price: "8.99€", desc: "Riz parfumé cuit avec du paneer (fromage indien) mariné dans des épices et herbes fraîches." },
-        { name: "Veg Biryani", price: "7.99€", desc: "Une version végétarienne de la Biryani. Riz parfumé cuit avec un mélange de légumes et des épices" }
+        { key: "choley_rice", price: "6.50€" },
+        { key: "dal_makani_rice", price: "6.50€" },
+        { key: "rajma_rice", price: "6.50€" },
+        { key: "aloo_gobhi_rice", price: "6.50€" },
+        { key: "dal_tadka_rice", price: "6.50€" },
+        { key: "palak_paneer_rice", price: "6.50€" },
+        { key: "paneer_makani_rice", price: "6.50€" },
+        { key: "mix_vegetables_naan", price: "6.50€" },
+        { key: "paneer_biryani", price: "8.99€" },
+        { key: "veg_biryani", price: "7.99€" }
       ]
     },
     {
       id: "drinks",
       title: t('menu.drinks'),
       items: [
-        { name: "Chai épicé", price: "1.90€", desc: "" },
-        { name: "Matcha Latte", price: "4.50€", desc: "" },
-        { name: "Chai Latte", price: "3.50€", desc: "" },
-        { name: "Mango Lassi", price: "4.50€", desc: "" },
-        { name: "Thandai", price: "5.99€", desc: "" },
-        { name: "Jaljeera", price: "3.5€", desc: "" },
-        { name: "Coca-Cola/Zero", price: "2€", desc: "" },
-        { name: "Fanta/Zero", price: "2€", desc: "" },
-        { name: "Sprite/Zero", price: "2€", desc: "" },
-        { name: "Spa water/eau", price: "2€", desc: "" },
-        { name: "Eau gazeuse/eau", price: "2€", desc: "" }
+        { key: "chai_epice", price: "1.90€" },
+        { key: "matcha_latte", price: "4.50€" },
+        { key: "chai_latte", price: "3.50€" },
+        { key: "mango_lassi", price: "4.50€" },
+        { key: "thandai", price: "5.99€" },
+        { key: "jaljeera", price: "3.5€" },
+        { key: "coca", price: "2€" },
+        { key: "fanta", price: "2€" },
+        { key: "sprite", price: "2€" },
+        { key: "spa", price: "2€" },
+        { key: "sparkling", price: "2€" }
       ]
     },
     {
       id: "alcohol",
       title: t('menu.alcohol'),
       items: [
-        { name: "Cobra Beer 33cl", price: "3.85€", desc: "" },
-        { name: "KingFisher beer", price: "3.85€", desc: "" },
-        { name: "Jupiler 33cl", price: "1.95€", desc: "" },
-        { name: "Jupiler 50cl", price: "2.95€", desc: "" },
-        { name: "Carlsberg", price: "2.95€", desc: "" },
-        { name: "Duvel", price: "3.50€", desc: "" },
-        { name: "Kriek", price: "3.50€", desc: "" }
+        { key: "cobra", price: "3.85€" },
+        { key: "kingfisher", price: "3.85€" },
+        { key: "jupiler33", price: "1.95€" },
+        { key: "jupiler50", price: "2.95€" },
+        { key: "carlsberg", price: "2.95€" },
+        { key: "duvel", price: "3.50€" },
+        { key: "kriek", price: "3.50€" }
       ]
     },
     {
       id: "desserts",
       title: t('menu.desserts'),
       items: [
-        { name: "Gulab Jamun", price: "", desc: "" },
-        { name: "Ladoo", price: "", desc: "" },
-        { name: "Burfi", price: "", desc: "" },
-        { name: "Kala Jamun", price: "", desc: "" },
-        { name: "Rasgulla", price: "", desc: "" }
+        { key: "gulab_jamun", price: "" },
+        { key: "ladoo", price: "" },
+        { key: "burfi", price: "" },
+        { key: "kala_jamun", price: "" },
+        { key: "rasgulla", price: "" }
       ]
     }
   ];
@@ -129,7 +124,7 @@ export default function Menu() {
       <div className="container">
         <div className="text-center mb-12 animate-in slide-in-from-bottom duration-700">
           <Badge className="bg-marigold text-charcoal border-2 border-charcoal px-4 py-1 text-sm font-bold uppercase tracking-wider mb-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-            Authentic Flavors
+            {t('menu.authentic_flavors')}
           </Badge>
           <h1 className="font-heading text-5xl md:text-7xl text-charcoal mb-6 drop-shadow-sm">
             {t('menu.title')}
@@ -147,12 +142,12 @@ export default function Menu() {
 
         <Tabs defaultValue="street_adventure" className="w-full">
           <div className="flex justify-center mb-12 overflow-x-auto pb-4 px-4">
-            <TabsList className="bg-white border-2 border-charcoal p-2 h-auto flex flex-wrap justify-center gap-2 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.1)] rounded-xl w-full md:w-auto">
+            <TabsList className="bg-white border-2 border-charcoal p-2 h-auto flex flex-wrap justify-center gap-2 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.1)] rounded-xl w-full md:w-auto min-h-[60px]">
               {menuCategories.map((category) => (
                 <TabsTrigger 
                   key={category.id} 
                   value={category.id}
-                  className="font-heading text-base md:text-lg px-4 py-2 data-[state=active]:bg-primary data-[state=active]:text-white rounded-lg transition-all flex-grow md:flex-grow-0"
+                  className="font-heading text-base md:text-lg px-4 py-2 data-[state=active]:bg-primary data-[state=active]:text-white rounded-lg transition-all flex-grow md:flex-grow-0 whitespace-nowrap"
                 >
                   {category.title}
                 </TabsTrigger>
@@ -170,23 +165,18 @@ export default function Menu() {
                   >
                     <CardContent className="p-6 flex flex-col h-full">
                       <div className="flex justify-between items-start mb-2">
-                        <h3 className="font-heading text-2xl text-charcoal">{item.name}</h3>
+                        <h3 className="font-heading text-2xl text-charcoal">{t(`menu.items.${item.key}.name`)}</h3>
                         {item.price && (
                           <span className="font-bold text-xl text-primary bg-primary/10 px-2 py-1 rounded border border-primary/20 whitespace-nowrap ml-2">
                             {item.price}
                           </span>
                         )}
                       </div>
-                      {item.desc && (
+                      {t(`menu.items.${item.key}.desc`, { defaultValue: '' }) && (
                         <p className="text-charcoal/80 font-medium text-sm mb-4 flex-grow">
-                          {item.desc}
+                          {t(`menu.items.${item.key}.desc`)}
                         </p>
                       )}
-                      <div className="mt-auto pt-4 border-t border-gray-100 flex justify-end items-center">
-                        <div className="w-10 h-10 rounded-full bg-cream border-2 border-charcoal flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" title={t('menu.add_to_order')}>
-                          <img src="/images/menu-icon-pop.png" alt="Available" className="w-6 h-6 object-contain" />
-                        </div>
-                      </div>
                     </CardContent>
                   </Card>
                 ))}

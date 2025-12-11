@@ -14,32 +14,37 @@ export default function Home() {
     {
       name: "Sarah M.",
       rating: 5,
-      text: "The best Indian street food in Brussels! The Vada Pav reminds me of Mumbai.",
-      date: "2 weeks ago"
+      textKey: "reviews.items.0",
+      dateKey: "reviews.time.weeks_ago",
+      count: 2
     },
     {
       name: "Jean-Pierre D.",
       rating: 5,
-      text: "Incroyable découverte. Les saveurs sont authentiques et le service est impeccable.",
-      date: "1 month ago"
+      textKey: "reviews.items.1",
+      dateKey: "reviews.time.month_ago",
+      count: 1
     },
     {
       name: "Priya K.",
       rating: 5,
-      text: "Finally, authentic chaat in Belgium! The Pani Puri is spot on.",
-      date: "3 weeks ago"
+      textKey: "reviews.items.2",
+      dateKey: "reviews.time.weeks_ago",
+      count: 3
     },
     {
       name: "Marc L.",
       rating: 4,
-      text: "Très bon rapport qualité-prix. Les portions sont généreuses et épicées comme il faut.",
-      date: "2 months ago"
+      textKey: "reviews.items.3",
+      dateKey: "reviews.time.months_ago",
+      count: 2
     },
     {
       name: "Elena R.",
       rating: 5,
-      text: "A hidden gem in Etterbeek. The Thali is a must-try!",
-      date: "1 week ago"
+      textKey: "reviews.items.4",
+      dateKey: "reviews.time.week_ago",
+      count: 1
     }
   ];
 
@@ -88,29 +93,34 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
               <Link href="/menu">
-                <Button className="bg-saffron hover:bg-orange-600 text-white text-xl px-8 py-6 rounded-lg font-bold border-2 border-charcoal shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+                <Button className="bg-saffron hover:bg-orange-600 text-white text-xl px-8 py-6 rounded-lg font-bold border-2 border-charcoal shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all h-auto">
                   {t('hero.cta_menu')}
                 </Button>
               </Link>
               
               <div className="flex gap-2">
                 <a href="https://deliveroo.be/en/menu/brussels/etterbeek/chai-and-thali" target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-[#00CCBC] hover:bg-[#00b3a6] text-white px-4 py-6 rounded-lg font-bold border-2 border-charcoal shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
-                    <img src="/images/deliveroo-logo.png" alt="Deliveroo" className="h-8 w-auto" />
+                  <Button className="bg-[#00CCBC] hover:bg-[#00b3a6] text-white px-4 py-6 rounded-lg font-bold border-2 border-charcoal shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all h-auto">
+                    <img src="/images/deliveroo-logo.png" alt="Deliveroo" className="h-8 w-auto filter brightness-0 invert" />
                   </Button>
                 </a>
                 <a href="https://www.ubereats.com/be/store/chai-and-thali/UNw2A8spT72JXkS3h9g89Q?diningMode=PICKUP" target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-[#06C167] hover:bg-[#05a357] text-white px-4 py-6 rounded-lg font-bold border-2 border-charcoal shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
-                    <img src="/images/ubereats-logo.png" alt="Uber Eats" className="h-8 w-auto" />
+                  <Button className="bg-[#06C167] hover:bg-[#05a357] text-white px-4 py-6 rounded-lg font-bold border-2 border-charcoal shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all h-auto">
+                    <img src="/images/ubereats-logo.png" alt="Uber Eats" className="h-8 w-auto filter brightness-0 invert" />
                   </Button>
                 </a>
               </div>
             </div>
 
-            <div className="pt-4">
+            <div className="pt-4 space-y-2">
               <p className="font-hand text-2xl text-marigold font-bold animate-pulse drop-shadow-md bg-charcoal/50 inline-block px-4 py-2 rounded-lg transform rotate-1">
                 {t('hero.catering')}
               </p>
+              <div className="block lg:hidden">
+                <p className="font-bold text-white bg-primary/80 inline-block px-3 py-1 rounded border border-white/20 shadow-sm">
+                  {t('hero.cheaper')}
+                </p>
+              </div>
             </div>
           </div>
 
@@ -173,12 +183,12 @@ export default function Home() {
               </div>
               
               <p className="font-heading text-2xl md:text-3xl text-center mb-8 leading-relaxed">
-                "{reviews[currentReview].text}"
+                "{t(reviews[currentReview].textKey)}"
               </p>
               
               <div className="text-center">
                 <p className="font-bold text-xl">{reviews[currentReview].name}</p>
-                <p className="text-gray-500 text-sm">{reviews[currentReview].date}</p>
+                <p className="text-gray-500 text-sm">{t(reviews[currentReview].dateKey, { count: reviews[currentReview].count })}</p>
               </div>
 
               <button 

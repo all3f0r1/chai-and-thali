@@ -30,10 +30,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     { label: t('nav.contact'), path: '/contact' },
   ];
 
-  const handleOrderClick = () => {
-    window.open('https://deliveroo.be/en/menu/brussels/etterbeek/chai-and-thali', '_blank');
-  };
-
   return (
     <div className="min-h-screen flex flex-col bg-background font-body overflow-x-hidden">
       {/* Navigation */}
@@ -48,7 +44,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <img 
                 src="/images/logo.png" 
                 alt="Chai and Thali Logo" 
-                className="h-16 w-auto group-hover:scale-105 transition-transform drop-shadow-md"
+                className="h-20 w-auto group-hover:scale-105 transition-transform drop-shadow-md"
               />
             </div>
           </Link>
@@ -75,12 +71,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               {i18n.language === 'en' ? '🇫🇷 FR' : '🇬🇧 EN'}
             </Button>
 
-            <Button 
-              onClick={handleOrderClick}
-              className="bg-primary text-white font-bold hover:bg-primary/90 box-shadow-pop hover:box-shadow-pop-hover transition-all border-2 border-charcoal"
-            >
-              {t('nav.order')}
-            </Button>
+            <div className="flex gap-2">
+              <a href="https://deliveroo.be/en/menu/brussels/etterbeek/chai-and-thali" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-[#00CCBC] hover:bg-[#00b3a6] text-white font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all border-2 border-black px-3 h-12">
+                  <img src="/images/deliveroo-logo.png" alt="Deliveroo" className="h-8 w-auto filter brightness-0 invert" />
+                </Button>
+              </a>
+              <a href="https://www.ubereats.com/be/store/chai-and-thali/UNw2A8spT72JXkS3h9g89Q?diningMode=PICKUP" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-[#06C167] hover:bg-[#05a357] text-white font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all border-2 border-black px-3 h-12">
+                  <img src="/images/ubereats-logo.png" alt="Uber Eats" className="h-8 w-auto filter brightness-0 invert" />
+                </Button>
+              </a>
+            </div>
           </nav>
 
           {/* Mobile Nav */}
@@ -108,12 +110,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                       </span>
                     </Link>
                   ))}
-                  <Button 
-                    onClick={handleOrderClick}
-                    className="w-full bg-primary text-white font-bold text-xl py-6 box-shadow-pop border-2 border-charcoal mt-4"
-                  >
-                    {t('nav.order')}
-                  </Button>
+                  <div className="flex gap-4 mt-4 justify-center">
+                    <a href="https://deliveroo.be/en/menu/brussels/etterbeek/chai-and-thali" target="_blank" rel="noopener noreferrer" className="w-1/2">
+                      <Button className="w-full bg-[#00CCBC] hover:bg-[#00b3a6] text-white font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] border-2 border-black h-14">
+                        <img src="/images/deliveroo-logo.png" alt="Deliveroo" className="h-8 w-auto mx-auto filter brightness-0 invert" />
+                      </Button>
+                    </a>
+                    <a href="https://www.ubereats.com/be/store/chai-and-thali/UNw2A8spT72JXkS3h9g89Q?diningMode=PICKUP" target="_blank" rel="noopener noreferrer" className="w-1/2">
+                      <Button className="w-full bg-[#06C167] hover:bg-[#05a357] text-white font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] border-2 border-black h-14">
+                        <img src="/images/ubereats-logo.png" alt="Uber Eats" className="h-8 w-auto mx-auto filter brightness-0 invert" />
+                      </Button>
+                    </a>
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>
@@ -136,10 +144,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               {t('features.authentic.desc')}
             </p>
             <div className="flex gap-4 pt-2">
-              <a href="https://www.instagram.com/chaiandthali/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer text-white">
+              <a href="https://www.instagram.com/chaiandthali/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer text-white border border-white/20 hover:border-primary shadow-[2px_2px_0px_0px_rgba(0,0,0,0.5)] hover:translate-y-[1px] hover:shadow-none">
                 <span className="font-bold">IG</span>
               </a>
-              <a href="https://www.facebook.com/people/Chai-and-Thali/100083066976868/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer text-white">
+              <a href="https://www.facebook.com/people/Chai-and-Thali/100083066976868/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer text-white border border-white/20 hover:border-primary shadow-[2px_2px_0px_0px_rgba(0,0,0,0.5)] hover:translate-y-[1px] hover:shadow-none">
                 <span className="font-bold">FB</span>
               </a>
             </div>
@@ -150,8 +158,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <ul className="space-y-2 text-gray-300">
               <li>Avenue de l'Armée 130</li>
               <li>1040 Etterbeek, Brussels</li>
-              <li>+32 474 892 741</li>
-              <li>chaiandthali@europe.com</li>
+              <li>
+                <a href="tel:+32474892741" className="hover:text-primary transition-colors">+32 474 892 741</a>
+              </li>
+              <li>
+                <a href="mailto:chaiandthali@europe.com" className="hover:text-primary transition-colors">chaiandthali@europe.com</a>
+              </li>
             </ul>
           </div>
           
@@ -159,19 +171,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <h4 className="font-heading text-xl text-white">{t('contact.hours')}</h4>
             <ul className="space-y-2 text-gray-300">
               <li className="flex justify-between">
-                <span>Mon - Thu</span>
+                <span>{t('contact.days.mon_thu')}</span>
                 <span>12:00 - 16:00, 18:00 - 21:30</span>
               </li>
               <li className="flex justify-between text-primary font-bold">
-                <span>Fri</span>
+                <span>{t('contact.days.fri')}</span>
                 <span>12:00 - 16:00, 18:00 - 22:00</span>
               </li>
               <li className="flex justify-between text-primary font-bold">
-                <span>Sat</span>
+                <span>{t('contact.days.sat')}</span>
                 <span>12:00 - 15:45, 18:00 - 22:00</span>
               </li>
               <li className="flex justify-between">
-                <span>Sun</span>
+                <span>{t('contact.days.sun')}</span>
                 <span>12:00 - 16:00, 18:00 - 21:30</span>
               </li>
             </ul>
