@@ -3,7 +3,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Info, Utensils } from 'lucide-react';
+import { Info } from 'lucide-react';
 
 export default function Menu() {
   const { t } = useTranslation();
@@ -146,13 +146,13 @@ export default function Menu() {
         </div>
 
         <Tabs defaultValue="street_adventure" className="w-full">
-          <div className="flex justify-center mb-12 overflow-x-auto pb-4">
-            <TabsList className="bg-white border-2 border-charcoal p-2 h-auto flex-wrap justify-center gap-2 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.1)] rounded-xl">
+          <div className="flex justify-center mb-12 overflow-x-auto pb-4 px-4">
+            <TabsList className="bg-white border-2 border-charcoal p-2 h-auto flex flex-wrap justify-center gap-2 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.1)] rounded-xl w-full md:w-auto">
               {menuCategories.map((category) => (
                 <TabsTrigger 
                   key={category.id} 
                   value={category.id}
-                  className="font-heading text-lg px-6 py-2 data-[state=active]:bg-primary data-[state=active]:text-white rounded-lg transition-all"
+                  className="font-heading text-base md:text-lg px-4 py-2 data-[state=active]:bg-primary data-[state=active]:text-white rounded-lg transition-all flex-grow md:flex-grow-0"
                 >
                   {category.title}
                 </TabsTrigger>
@@ -172,7 +172,7 @@ export default function Menu() {
                       <div className="flex justify-between items-start mb-2">
                         <h3 className="font-heading text-2xl text-charcoal">{item.name}</h3>
                         {item.price && (
-                          <span className="font-bold text-xl text-primary bg-primary/10 px-2 py-1 rounded border border-primary/20">
+                          <span className="font-bold text-xl text-primary bg-primary/10 px-2 py-1 rounded border border-primary/20 whitespace-nowrap ml-2">
                             {item.price}
                           </span>
                         )}
@@ -182,12 +182,9 @@ export default function Menu() {
                           {item.desc}
                         </p>
                       )}
-                      <div className="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center">
-                        <span className="text-xs font-bold uppercase tracking-wider text-gray-400">
-                          {t('menu.add_to_order')}
-                        </span>
-                        <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-400">
-                          <Utensils className="w-4 h-4" />
+                      <div className="mt-auto pt-4 border-t border-gray-100 flex justify-end items-center">
+                        <div className="w-10 h-10 rounded-full bg-cream border-2 border-charcoal flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" title={t('menu.add_to_order')}>
+                          <img src="/images/menu-icon-pop.png" alt="Available" className="w-6 h-6 object-contain" />
                         </div>
                       </div>
                     </CardContent>

@@ -13,16 +13,16 @@ const resources = {
         order: "Order Online"
       },
       hero: {
-        title: "Indulge the swaad of India",
+        title: "Indulge the taste of India",
         subtitle: "Authentic Indian Street Food in Brussels",
         cta: "View Menu",
         secondary_cta: "Order Now",
-        catering: "We also offer Catering Services for your events!"
+        catering: "✨ We also offer Catering Services for your events! ✨"
       },
       features: {
         authentic: {
           title: "Authentic Taste",
-          desc: "Real Indian swaad, made by Indians with traditional recipes."
+          desc: "Real Indian flavors, made by Indians with traditional recipes."
         },
         affordable: {
           title: "Unbeatable Prices",
@@ -87,16 +87,16 @@ const resources = {
         order: "Commander"
       },
       hero: {
-        title: "Savourez le swaad de l'Inde",
+        title: "Savourez le goût de l'Inde",
         subtitle: "Street Food Indienne Authentique à Bruxelles",
         cta: "Voir le Menu",
         secondary_cta: "Commander",
-        catering: "Nous proposons également un service traiteur pour vos événements !"
+        catering: "✨ Nous proposons également un service traiteur pour vos événements ! ✨"
       },
       features: {
         authentic: {
           title: "Goût Authentique",
-          desc: "Vrai swaad indien, fait par des Indiens avec des recettes traditionnelles."
+          desc: "Vraies saveurs indiennes, faites par des Indiens avec des recettes traditionnelles."
         },
         affordable: {
           title: "Prix Imbattables",
