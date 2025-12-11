@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Globe } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -30,6 +30,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     { label: t('nav.contact'), path: '/contact' },
   ];
 
+  const handleOrderClick = () => {
+    window.open('https://deliveroo.be/en/menu/brussels/etterbeek/chai-and-thali', '_blank');
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-background font-body overflow-x-hidden">
       {/* Navigation */}
@@ -41,12 +45,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container flex items-center justify-between">
           <Link href="/">
             <div className="flex items-center gap-2 cursor-pointer group">
-              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-heading text-xl border-2 border-charcoal group-hover:rotate-12 transition-transform">
-                CT
-              </div>
-              <span className={`font-heading text-2xl tracking-wide ${isScrolled ? 'text-foreground' : 'text-foreground md:text-white md:text-shadow-pop'}`}>
-                Chai & Thali
-              </span>
+              <img 
+                src="/images/logo.png" 
+                alt="Chai and Thali Logo" 
+                className="h-16 w-auto group-hover:scale-105 transition-transform drop-shadow-md"
+              />
             </div>
           </Link>
 
@@ -56,7 +59,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link key={item.path} href={item.path}>
                 <span 
                   className={`font-medium text-lg cursor-pointer hover:text-primary transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full ${
-                    location === item.path ? 'text-primary after:w-full' : isScrolled ? 'text-foreground' : 'text-white'
+                    location === item.path ? 'text-primary after:w-full' : isScrolled ? 'text-foreground' : 'text-white text-shadow-sm'
                   }`}
                 >
                   {item.label}
@@ -66,15 +69,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             
             <Button 
               variant="ghost" 
-              size="icon" 
               onClick={toggleLanguage}
-              className={isScrolled ? 'text-foreground' : 'text-white hover:text-primary hover:bg-white/10'}
+              className={`font-bold text-lg ${isScrolled ? 'text-foreground' : 'text-white hover:text-primary hover:bg-white/10 text-shadow-sm'}`}
             >
-              <Globe className="h-5 w-5" />
-              <span className="sr-only">Switch Language</span>
+              {i18n.language === 'en' ? '🇫🇷 FR' : '🇬🇧 EN'}
             </Button>
 
             <Button 
+              onClick={handleOrderClick}
               className="bg-primary text-white font-bold hover:bg-primary/90 box-shadow-pop hover:box-shadow-pop-hover transition-all border-2 border-charcoal"
             >
               {t('nav.order')}
@@ -85,11 +87,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="flex items-center gap-4 md:hidden">
             <Button 
               variant="ghost" 
-              size="icon" 
               onClick={toggleLanguage}
-              className={isScrolled ? 'text-foreground' : 'text-foreground'}
+              className={isScrolled ? 'text-foreground' : 'text-white text-shadow-sm'}
             >
-              <Globe className="h-5 w-5" />
+              {i18n.language === 'en' ? '🇫🇷 FR' : '🇬🇧 EN'}
             </Button>
             
             <Sheet>
@@ -107,7 +108,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                       </span>
                     </Link>
                   ))}
-                  <Button className="w-full bg-primary text-white font-bold text-xl py-6 box-shadow-pop border-2 border-charcoal mt-4">
+                  <Button 
+                    onClick={handleOrderClick}
+                    className="w-full bg-primary text-white font-bold text-xl py-6 box-shadow-pop border-2 border-charcoal mt-4"
+                  >
                     {t('nav.order')}
                   </Button>
                 </div>
@@ -132,13 +136,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               {t('features.authentic.desc')}
             </p>
             <div className="flex gap-4 pt-2">
-              {/* Social Icons Placeholder */}
-              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+              <a href="https://www.instagram.com/chaiandthali/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer text-white">
                 <span className="font-bold">IG</span>
-              </div>
-              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+              </a>
+              <a href="https://www.facebook.com/people/Chai-and-Thali/100083066976868/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer text-white">
                 <span className="font-bold">FB</span>
-              </div>
+              </a>
             </div>
           </div>
           
@@ -157,15 +160,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <ul className="space-y-2 text-gray-300">
               <li className="flex justify-between">
                 <span>Mon - Thu</span>
-                <span>12:00 - 22:00</span>
+                <span>12:00 - 16:00, 18:00 - 21:30</span>
               </li>
               <li className="flex justify-between text-primary font-bold">
-                <span>Fri - Sat</span>
-                <span>12:00 - 23:00</span>
+                <span>Fri</span>
+                <span>12:00 - 16:00, 18:00 - 22:00</span>
+              </li>
+              <li className="flex justify-between text-primary font-bold">
+                <span>Sat</span>
+                <span>12:00 - 15:45, 18:00 - 22:00</span>
               </li>
               <li className="flex justify-between">
                 <span>Sun</span>
-                <span>12:00 - 22:00</span>
+                <span>12:00 - 16:00, 18:00 - 21:30</span>
               </li>
             </ul>
           </div>
