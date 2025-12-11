@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://chaiandthali.com/sitemap.xml
